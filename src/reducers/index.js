@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import VersesReducer from './reducers_verses'
+import ReducerVerse from './reducers_verses';
+import ReducerPosts from './reducers_posts';
+import ReducerActivePost from './reducers_active_post'
 
 const rootReducer = combineReducers({
-  verses : VersesReducer,
+  verses : ReducerVerse,
+  posts: ReducerPosts,
+  ActivePost: ReducerActivePost
 });
 
 export default rootReducer;

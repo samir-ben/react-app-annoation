@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import './App.css';
-import NavBar from './components/Navbar';
-import Home from './containers/Home';
-import {BrowserRouter, Route} from 'react-router-dom';
+import Navbar from './components/Navbar'
+import { Route, BrowserRouter, Switch } from 'react-router-dom'
+import VerseList from './containers/Verses-list'
+import Post from './containers/Post'
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <NavBar />
-          <Route path="/" component={Home}/>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={VerseList}/>
+            <Route path='/:post_id' component={Post} />
+          </Switch>
         </div>
       </BrowserRouter>
     );
